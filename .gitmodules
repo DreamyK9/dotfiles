@@ -1,0 +1,3 @@
+[submodule ".nvim"]
+	path = .nvim
+	url = git@github.com:dreamyk9/.nvim
