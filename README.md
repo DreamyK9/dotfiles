@@ -6,6 +6,7 @@ Also checkout [@nickjj/dotfiles](https://github.com/nickjj/dotfiles/)!
 
 ### Configs / Settings included:
 - [x] NeoVim - ~/.config/nvim
+   - Note: install ripgrep for automatic gitignore filtering in telescope 
 - [ ] .gitignore - in project folder
 - [ ] [synth-shell](https://github.com/andresgongora/synth-shell)
     * ~/.bashrc.d/style
@@ -13,4 +14,3 @@ Also checkout [@nickjj/dotfiles](https://github.com/nickjj/dotfiles/)!
 - [x] Bash - ~/.bashrc
 - [x] Git Bash (Windows)
 - [x] Windows Terminal
-
