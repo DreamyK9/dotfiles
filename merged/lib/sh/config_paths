@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# NeoVim
+config_nvim=~/AppData/Local/nvim
+
+# Windows Terminal
+config_windows_terminal=~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/
+
+# Bash
+config_bash=~
+

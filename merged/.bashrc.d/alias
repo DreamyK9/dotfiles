@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# ls aliases
+alias la="ls -A"
+alias ll="ls -l"
+alias lla="ls -lA"
+alias lh="ls -d .?*"
+alias llh="ls -ld .?*"
+
+# vim aliases
+alias vim="nvim"
+alias vi="vim"
+
+# python aliases
+alias ipy="ipython"
+alias py="python"
+
+# other
+alias qmake="qmake-qt5"

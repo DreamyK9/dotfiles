@@ -1,0 +1,23 @@
+#!/bin/bash
+# Tools to manipulate the $PATH environment variable
+
+# Functions to append and prepend a path to $PATH
+# Source: https://superuser.com/a/753948
+pathprepend() {
+  for ((i=$#; i>0; i--)); 
+  do
+    ARG=${!i}
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
+pathappend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$ARG"
+    fi
+  done
+}
+
