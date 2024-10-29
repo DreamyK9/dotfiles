@@ -2,7 +2,7 @@
 
 # Load custom shell libraries
 if [ -d ~/lib/sh ]; then
-    for lib in ~/lib/sh/*; do
+    for lib in ~/.local/lib/sh/*; do
         if [ -f "$lib" ]; then
             . "$lib"
         fi
@@ -21,9 +21,8 @@ fi
 unset rc
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
+pathappend $HOME
+pathappend ~/.local/bin
 export PATH
 
 # OS specific rc
@@ -31,12 +30,15 @@ OS=$(uname)
 
 case "$OS" in
     Linux)
-    . .linuxrc
-        ;;
+        . .osrc/linux
+    ;;
     Darwin)
-    . .macrc
-        ;;
+        . .osrc/mac
+    ;;
     CYGWIN* | MINGW*)
-    . .windowsrc
-        ;;
+        . .osrc/windows
+    ;;
+    *)
+        echo "ERROR: Couldn't detect OS"
+    ;;
 esac

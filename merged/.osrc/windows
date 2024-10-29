@@ -1,25 +1,15 @@
 #!/bin/bash
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
-# Starts tmux if the current session isn't tmux already
-# Source: https://stackoverflow.com/a/51922746
-if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
-
-
 # ---------------------------------
 # Setup to use anaconda environment
 
 # lib imports
 . ~/lib/pathtools
-anaconda_path="$HOME/AppData/Local/anaconda3"
+anaconda_path="~/AppData/Local/anaconda3"
 
 if [ -d "$anaconda_path" ]; then
     # Anaconda env setup script
-    . /c/Users/jwolf/AppData/Local/Anaconda3/etc/profile.d/conda.sh
+    . ~/AppData/Local/Anaconda3/etc/profile.d/conda.sh
 
     # include important Anaconda dirs in path
         pathprepend "$anaconda_path" "$anaconda_path/Scripts" "$anaconda_path/Library"
@@ -28,3 +18,4 @@ if [ -d "$anaconda_path" ]; then
     alias py="python"
     alias pip="python -m pip"
 fi
+unset anaconda_path
