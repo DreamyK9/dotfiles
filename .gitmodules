@@ -1,6 +1,3 @@
-[submodule ".git_bash"]
-	path = .git_bash
-	url = git@github.com:DreamyK9/.git_bash.git
 [submodule ".bash"]
 	path = .bash
 	url = git@github.com:DreamyK9/.bash.git
