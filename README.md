@@ -19,3 +19,4 @@ Settings and configs for the tools I use
    - [wuelnerdotexe: neovimcraft](https://neovimcraft.com/plugin/wuelnerdotexe/nvim/)
    - [Telescope Extensions - Reddit](https://www.reddit.com/r/neovim/comments/1fwp13l/neovim_telescope_extensions/?tl=de)
    - [Telescope Extensions - YouTube](https://www.youtube.com/watch?v=3RJ05hj23Vg)
+   - [nvim-lazy](https://github.com/slydragonn/nvim-lazy)
