@@ -14,7 +14,8 @@ Please follow the [instructions](https://github.com/arkenfox/user.js/wiki/2.1-Us
 
 ### Convenience
 - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/): Provides you with an easy toggle to set any website into dark mode.
-
+- [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/): Run multiple sessions in one browser.
+- [KeePass Helper - URL in title](https://addons.mozilla.org/en-US/firefox/addon/keepass-helper-url-in-title/): Include website URLs in tab titles. Helps KeePass autofill.
 
 ## Extension Settings
 - uBlockOrigin: To import the settings, click on the extension's icon in the toolbar. Then click on the settings icon in the bottom right corner. On the settings page scroll down to the bottom. Click on restore from file, select the txt file from this repository and confirm. Wait a moment for uBlock to import everything. From now on everything should update on its own.  As uBlock's filter lists update, you might need to approve additional permissions, as it only asks to access the sites it has in its filters.
