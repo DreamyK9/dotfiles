@@ -5,14 +5,24 @@ Settings and configs for the tools I use
 ### Configs / Settings included:
 
 - [x] NeoVim - ~/.config/nvim
-  - Note: install ripgrep for automatic filtering of hidden files (dotfiles and gitignore) in telescope
-- [ ] .gitignore - in project folder
 - [ ] [synth-shell](https://github.com/andresgongora/synth-shell)
   - ~/.bashrc.d/style
   - ~/.config/synth-shell
-- [x] Bash - ~/.bashrc
-- [x] Git Bash (Windows)
-- [x] Windows Terminal
+- [x] Bash - ~
+- [x] Windows Terminal (DISCONTINUED)
+- [x] Lazygit
+
+### Workflow TODO
+- clean up bashrc
+- yazi file browser
+- zsh with oh-my-zsh!
+- XDG-variables
+- dotfile management for windows using PowerShell
+- automatic mirror of dotfiles from main to windows repo
+- rust command line tools: https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a
+- https://github.com/nvim-telescope/telescope-file-browser.nvim
+
+I don't care if this doesn't fit here! It's the same topic for me >:3
 
 ### Inspiration
 
