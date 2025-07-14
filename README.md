@@ -21,6 +21,7 @@ Settings and configs for the tools I use
 - automatic mirror of dotfiles from main to windows repo
 - rust command line tools: https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a
 - https://github.com/nvim-telescope/telescope-file-browser.nvim
+- Steal from Primeagen https://github.com/ThePrimeagen/.dotfiles
 
 I don't care if this doesn't fit here! It's the same topic for me >:3
 
