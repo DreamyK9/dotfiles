@@ -37,17 +37,34 @@ pyenv_wrapper() {
   shift
   case $cmd in
     "venv" | "env" | "v")
-      case $1 in
-        "activate") source "$HOME/.pyenv-win-venv/envs/$2/Scripts/activate";;
+      cmd=$1
+      shift
+      case $cmd in
+        "activate") source "$HOME/.pyenv-win-venv/envs/$1/Scripts/activate";;
+        "init")
+          if [ -f "$PWD/.python-version" ]; then
+            env_name=$(<.python-version)
+          else
+            echo "ERROR: No '.python-version' file found in current directory"
+            return
+          fi
+
+          env_path="$HOME/.pyenv-win-venv/envs/$env_name"
+          if [ -d $env_path ]; then
+            source "$env_path/Scripts/activate"
+          else
+            echo "ERROR: No virtual environment found with the name: '$env_name'"
+          fi
+        ;;
+
         *) pyenv-venv $*;;
       esac;;
     "list") 
-      case $1 in 
+      case $cmd in 
         "versions") pyenv-venv list python;;
         *) pyenv-venv list $*;;
       esac;;
     *) pyenv $cmd $*;;
   esac
 }
-
-alias pyv="pyenv_wrapper"
+alias pyenv=pyenv_wrapper

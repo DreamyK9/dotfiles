@@ -1,30 +1,35 @@
 #!/bin/bash
 
-# ls aliases
+# ls
 alias l="ls"
 alias la="ls -A"
 alias ll="ls -hl"
 alias lla="ls -hlA"
 
 if [[ $OS == "Windows" ]]; then
-    alias lh="ls -d .?*"
-    alias llh="ls -ld .?*"
+  alias lh="ls -d .?*"
+  alias llh="ls -ld .?*"
 else
-    alias lh="ls -d .!(|.)"
-    alias llh="ls -hld .!(|.)"
+  alias lh="ls -d .!(|.)"
+  alias llh="ls -hld .!(|.)"
 fi
 
-# NeoVim
-alias vim="nvim"
-alias vi="nvim"
-
-# vim aliases
+# vim
 alias vim="nvim"
 alias vi="vim"
 
-# python aliases
+# python
 alias ipy="ipython"
 alias py="python"
+alias pye="pyenv"
+alias venv="python -m venv"
+alias pe="pyenv"
+alias pv="pyenv venv"
+
+# lua
+alias lua="lua.exe"
+alias luarocks="lua \"$LUA_DEV/luarocks.lua\""
 
 # other
 alias qmake="qmake-qt5"
+alias lg="lazygit"

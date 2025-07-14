@@ -58,15 +58,13 @@ forcepathappend() {
 pathremove() {
   for ARG in "$@"
   do
-    if [ -d "$ARG" ]; then
-      while [[ ":$PATH:" == *":$ARG:"* ]];
+    while [[ ":$PATH:" == *":$ARG:"* ]];
       do
         PATH=":$PATH:"
         PATH=${PATH//":"/"::"}
         PATH=${PATH//":$ARG:"/}
         PATH=${PATH//"::"/":"}
         PATH=${PATH#:}; PATH=${PATH%:}
-      done
-    fi
+    done
   done
 }
