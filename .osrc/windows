@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# ---------------------------------
+# Setup to use anaconda environment
+
+# lib imports
+. ~/.local/lib/sh/pathtools
+
+# # Not using Anaconda anymore
+# 
+# anaconda_path=~/AppData/Local/anaconda3
+# 
+# if [ -d "$anaconda_path" ]; then
+#     # Anaconda env setup script
+#     . ~/AppData/Local/Anaconda3/etc/profile.d/conda.sh
+# 
+#     # include important Anaconda dirs in path
+#         pathprepend "$anaconda_path" "$anaconda_path/Scripts" "$anaconda_path/Library"
+# 
+#     # So that py and pip definitely link to the anaconda python environment
+#     alias py="python"
+#     alias pip="python -m pip"
+# fi
+# unset anaconda_path
+# export PATH
+
+# pyenv-win setup
+pyenv_path=~/.pyenv/pyenv-win
+if [ -d $pyenv_path ]; then
+  forcepathprepend "$pyenv_path/shims" 
+  forcepathprepend "$pyenv_path/bin"
+  forcepathprepend "$HOME/.pyenv-win-venv/bin"
+fi
+
+pyenv_wrapper() {
+  cmd=$1
+  shift
+  case $cmd in
+    "venv" | "env" | "v")
+      case $1 in
+        "activate") source "$HOME/.pyenv-win-venv/envs/$2/Scripts/activate";;
+        *) pyenv-venv $*;;
+      esac;;
+    "list") 
+      case $1 in 
+        "versions") pyenv-venv list python;;
+        *) pyenv-venv list $*;;
+      esac;;
+    *) pyenv $cmd $*;;
+  esac
+}
+
+alias pyv="pyenv_wrapper"

@@ -1,0 +1,55 @@
+#!/bin/bash
+# Config Management Tools
+
+# Config paths
+declare -A config_path
+
+config_path[bash]=~
+
+if [[ $OS == "Windows" ]]; then
+  config_path[wt]=~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/
+  config_path[nvim]=~/AppData/Local/nvim
+elif [[ $OS == "Linux" ]]; then
+  config_path[nvim]=~/.config/nvim
+elif [[ $OS == "Darwin" ]]; then
+  : # Nothing here yet
+fi
+
+# Long Names of Configs
+declare -A config_name
+
+config_name[bash]=Bash
+config_name[wt]="Windows Terminal"
+config_name[nvim]=NeoVim
+
+config_command() {
+  command="$1"
+  name="$2"
+  path="$3"
+
+  echo > /dev/stdout
+  clr_bold clr_green "[$name] $path" > /dev/stdout
+  git -C "$path" $command > /dev/stdout
+}
+
+cmt() {
+  command="$1"
+  config="$2"
+  error="cmt: Need a git command to execute.\nPossible Commands:\n  - status\n  - pull\n  - push"
+
+  if [[ -z $command ]]; then
+    echo -e $error
+    return 1
+  fi
+
+  if [[ -n $config ]]; then
+    echo :: Config provided: \"$config\"
+    config_command $command "${config_name[$config]}" "${config_path[$config]}"
+  else
+    # iterate over configs
+    for cfg in "${!config_name[@]}";
+    do 
+      config_command $command "${config_name[$cfg]}" "${config_path[$cfg]}"
+    done
+  fi
+}

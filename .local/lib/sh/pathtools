@@ -1,0 +1,72 @@
+#!/bin/bash
+# Tools to manipulate the $PATH environment variable
+
+# Functions to append and prepend a path to $PATH
+# Source: https://superuser.com/a/753948
+pathprepend() {
+  for ((i=$#; i>0; i--)); 
+  do
+    ARG=${!i}
+    if [ -d "$ARG" ]; then
+      if [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+      fi
+    else
+      echo "WARNING: \"$ARG\" could not be added to \$PATH as the path doesn't exist"
+    fi
+  done
+}
+
+pathappend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ]; then
+      if [[ ":$PATH:" != *":$ARG:"* ]]; then
+      PATH="${PATH:+"$PATH:"}$ARG"
+      fi
+    else
+      echo "WARNING: \"$ARG\" could not be added to \$PATH as the path doesn't exist"
+    fi
+  done
+}
+
+forcepathprepend() {
+  for ((i=$#; i>0; i--)); 
+  do
+    ARG=${!i}
+    if [ -d "$ARG" ]; then
+      pathremove $ARG
+      PATH="$ARG${PATH:+":$PATH"}"
+    else
+      echo "WARNING: \"$ARG\" could not be added to \$PATH as the path doesn't exist"
+    fi
+  done
+}
+
+forcepathappend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ]; then
+      pathremove $ARG
+      PATH="${PATH:+"$PATH:"}$ARG"
+    else
+      echo "WARNING: \"$ARG\" could not be added to \$PATH as the path doesn't exist"
+    fi
+  done
+}
+
+pathremove() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ]; then
+      while [[ ":$PATH:" == *":$ARG:"* ]];
+      do
+        PATH=":$PATH:"
+        PATH=${PATH//":"/"::"}
+        PATH=${PATH//":$ARG:"/}
+        PATH=${PATH//"::"/":"}
+        PATH=${PATH#:}; PATH=${PATH%:}
+      done
+    fi
+  done
+}

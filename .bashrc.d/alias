@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# ls aliases
+alias l="ls"
+alias la="ls -A"
+alias ll="ls -hl"
+alias lla="ls -hlA"
+
+if [[ $OS == "Windows" ]]; then
+    alias lh="ls -d .?*"
+    alias llh="ls -ld .?*"
+else
+    alias lh="ls -d .!(|.)"
+    alias llh="ls -hld .!(|.)"
+fi
+
+# NeoVim
+alias vim="nvim"
+alias vi="nvim"
+
+# vim aliases
+alias vim="nvim"
+alias vi="vim"
+
+# python aliases
+alias ipy="ipython"
+alias py="python"
+
+# other
+alias qmake="qmake-qt5"
