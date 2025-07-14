@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "folke/lazydev.nvim", opts = {} },
+		"mason-org/mason-lspconfig.nvim",
 	},
 	config = function()
 		local nvim_lsp = require("lspconfig")
@@ -27,54 +28,54 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		mason_lspconfig.setup_handlers({
-			function(server)
-				nvim_lsp[server].setup({
-					capabilities = capabilities,
-				})
-			end,
-			["ts_ls"] = function()
-				nvim_lsp["ts_ls"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-			["cssls"] = function()
-				nvim_lsp["cssls"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-			["tailwindcss"] = function()
-				nvim_lsp["tailwindcss"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-			["html"] = function()
-				nvim_lsp["html"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-			["jsonls"] = function()
-				nvim_lsp["jsonls"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-			["eslint"] = function()
-				nvim_lsp["eslint"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-			["pyright"] = function()
-				nvim_lsp["pyright"].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-		})
+		--		mason_lspconfig.setup_handlers({
+		--			function(server)
+		--				nvim_lsp[server].setup({
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["ts_ls"] = function()
+		--				nvim_lsp["ts_ls"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["cssls"] = function()
+		--				nvim_lsp["cssls"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["tailwindcss"] = function()
+		--				nvim_lsp["tailwindcss"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["html"] = function()
+		--				nvim_lsp["html"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["jsonls"] = function()
+		--				nvim_lsp["jsonls"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["eslint"] = function()
+		--				nvim_lsp["eslint"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--			["pyright"] = function()
+		--				nvim_lsp["pyright"].setup({
+		--					on_attach = on_attach,
+		--					capabilities = capabilities,
+		--				})
+		--			end,
+		--		})
 	end,
 }
