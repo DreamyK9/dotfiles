@@ -1,7 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local assets_folder = "C:/Users/jwolf/wezterm/assets"
+local assets_folder = "C:/Users/jwolf/.wezterm/assets"
 
 -- Shell
 config.default_prog = { "wsl.exe" }
