@@ -46,12 +46,19 @@ map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Fuzzy find fil
 map("n", "<leader>fF", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
 map("n", "<leader>FF", "<CMD>Telescope find_files hidden=true<CR>", { desc = "Fuzzy find hidden files in cwd" })
 map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
-map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
+-- map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Fuzzy find opened files" })
 map("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "Find todo markers" })
 map("n", "<leader>fe", "<CMD>Noice pick<CR>", { desc = "List message history. e='errors'" })
 map("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { desc = "Search help docs" })
 map("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
 map("n", "<leader>fc", "<CMD>Telescope commands<CR>", { desc = "Fuzzy find commands" })
+map("n", "<leader>fb", "<CMD>Telescope commands<CR>", { desc = "Fuzzy find commands" })
+map(
+	"n",
+	"<leader>fb",
+	"<CMD>Telescope file_browser path=%:p:h select_buffer=true<CR>",
+	{ desc = "Open file browser at current buffer" }
+)
 
 -- git
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Open Lazygit" })
