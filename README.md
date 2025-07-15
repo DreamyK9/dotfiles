@@ -15,17 +15,20 @@ Settings and configs for the tools I use
 ### Workflow TODO
 - clean up bashrc
 - yazi file browser
+- telescope-file-browser
 - zsh with oh-my-zsh!
 - XDG-variables
 - dotfile management for windows using PowerShell
-- automatic mirror of dotfiles from main to windows repo
+- rework pathlib with -options ( -f force, -o optional, -w warn)
 - rust command line tools: https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a
 - https://github.com/nvim-telescope/telescope-file-browser.nvim
 - Steal from Primeagen https://github.com/ThePrimeagen/.dotfiles
+- Git Worktree with nvim https://www.youtube.com/watch?v=2uEqYw-N8uE
+- automatic mirror of dotfiles from main to windows repo
 
 I don't care if this doesn't fit here! It's the same topic for me >:3
 
-### Inspiration
+### Inspiration / Sources
 
 - [@nickjj/dotfiles](https://github.com/nickjj/dotfiles/)
 - NeoVim
