@@ -6,17 +6,16 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-# Pull config updates
-if [ ! -f /tmp/wolf-user-configs-fetched ]; then
-    touch /tmp/wolf-user-configs-fetched
-    cmt pull > /dev/null
+# Stow dotfiles on Linux systems
+if [[ $OS == "Linux" && command -v stow >/dev/null 2>&1 ]]; then
+    stow --restow --dotfiles --target="$HOME" --dir="$HOME/.dotfiles"
 fi
 
 # ----------------------------------------------
 # User specific environment and startup programs
 
 # If in tmux session, run neofetch
-if [[ -n $TMUX ]] && command -v neofetch >/dev/null 2>&1; then
-    neofetch
-fi
+# if [[ -n $TMUX ]] && command -v neofetch >/dev/null 2>&1; then
+#     neofetch
+# fi
 
