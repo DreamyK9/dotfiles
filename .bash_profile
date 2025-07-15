@@ -19,3 +19,4 @@ fi
 #     neofetch
 # fi
 
+EDITOR=nvim
