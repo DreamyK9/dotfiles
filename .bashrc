@@ -4,6 +4,7 @@ OS=$(uname)
 if [[ $OS =~ ^(CYGWIN|MINGW)* ]]; then
   OS="Windows"
 fi
+export OS
 
 # Load custom shell libraries
 if [ -d ~/.local/lib/sh ]; then
@@ -19,23 +20,6 @@ unset lib
 pathappend $HOME
 pathappend ~/.local/bin
 export PATH
-
-# OS specific rc
-case "$OS" in
-    Linux)
-        . ~/.osrc/linux
-    ;;
-    Darwin)
-        . ~/.osrc/mac
-    ;;
-    Windows)
-        . ~/.osrc/windows
-    ;;
-    *)
-        echo "ERROR: Couldn't detect OS"
-    ;;
-esac
-export OS
 
 # Load aliases and functions from .bashrc.d
 if [ -d ~/.bashrc.d ]; then

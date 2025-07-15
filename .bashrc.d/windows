@@ -1,0 +1,73 @@
+#!/bin/bash
+
+if [[ $OS == "Windows" ]]; then
+
+    # ---------------------------------
+    # Setup to use anaconda environment
+
+    # lib imports
+    . ~/.local/lib/sh/pathtools
+
+    # # Not using Anaconda anymore
+    # 
+    # anaconda_path=~/AppData/Local/anaconda3
+    # 
+    # if [ -d "$anaconda_path" ]; then
+    #     # Anaconda env setup script
+    #     . ~/AppData/Local/Anaconda3/etc/profile.d/conda.sh
+    # 
+    #     # include important Anaconda dirs in path
+    #         pathprepend "$anaconda_path" "$anaconda_path/Scripts" "$anaconda_path/Library"
+    # 
+    #     # So that py and pip definitely link to the anaconda python environment
+    #     alias py="python"
+    #     alias pip="python -m pip"
+    # fi
+    # unset anaconda_path
+    # export PATH
+
+    # pyenv-win setup
+    pyenv_path=~/.pyenv/pyenv-win
+    if [ -d $pyenv_path ]; then
+      forcepathprepend "$pyenv_path/shims" 
+      forcepathprepend "$pyenv_path/bin"
+      forcepathprepend "$HOME/.pyenv-win-venv/bin"
+    fi
+
+    pyenv_wrapper() {
+      cmd=$1
+      shift
+      case $cmd in
+        "venv" | "env" | "v")
+          cmd=$1
+          shift
+          case $cmd in
+            "activate") source "$HOME/.pyenv-win-venv/envs/$1/Scripts/activate";;
+            "init")
+              if [ -f "$PWD/.python-version" ]; then
+                env_name=$(<.python-version)
+              else
+                echo "ERROR: No '.python-version' file found in current directory"
+                return
+              fi
+
+              env_path="$HOME/.pyenv-win-venv/envs/$env_name"
+              if [ -d $env_path ]; then
+                source "$env_path/Scripts/activate"
+              else
+                echo "ERROR: No virtual environment found with the name: '$env_name'"
+              fi
+            ;;
+
+            *) pyenv-venv $*;;
+          esac;;
+        "list") 
+          case $cmd in 
+            "versions") pyenv-venv list python;;
+            *) pyenv-venv list $*;;
+          esac;;
+        *) pyenv $cmd $*;;
+      esac
+    }
+    alias pyenv=pyenv_wrapper
+fi
