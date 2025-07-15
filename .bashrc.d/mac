@@ -2,4 +2,5 @@
 
 if [[ $OS == "Windows" ]]; then
     # MacOS specific rc goes here
+    :
 fi
