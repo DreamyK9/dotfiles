@@ -4,6 +4,9 @@ OS=$(uname)
 if [[ $OS =~ ^(CYGWIN|MINGW)* ]]; then
   OS="Windows"
 fi
+if [ "$WSLENV" ]; then
+    OS="Linux"
+fi
 export OS
 
 # Load custom shell libraries
