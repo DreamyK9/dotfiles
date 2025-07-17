@@ -7,7 +7,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # Stow dotfiles on Linux systems
-if [[ $OS == "Linux" && command -v stow >/dev/null 2>&1 ]]; then
+if [[ $OS == "Linux" ]] && command -v stow >/dev/null 2>&1; then
     stow --restow --dotfiles --target="$HOME" --dir="$HOME/.dotfiles"
 fi
 
