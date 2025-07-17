@@ -3,6 +3,19 @@
 
 # Functions to append and prepend a path to $PATH
 # Source: https://superuser.com/a/753948
+pathtest() {
+    local opt
+    while getopts "ofpa" in opt; do
+        case $opt in 
+            o) echo "Optional";;
+            f) echo "Forcing" ;;
+            p) echo "Prepending";;
+            a) echo "Appending";;
+            \?) echo "Invalid option: -$OPTARG" > &2;;
+        esac
+    done
+}
+
 pathprepend() {
   for ((i=$#; i>0; i--)); 
   do
