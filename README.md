@@ -5,12 +5,11 @@ Settings and configs for the tools I use
 ### Configs / Settings included:
 
 - [x] NeoVim - ~/.config/nvim
-- [ ] [synth-shell](https://github.com/andresgongora/synth-shell)
-  - ~/.bashrc.d/style
-  - ~/.config/synth-shell
 - [x] Bash - ~
 - [x] Windows Terminal (DISCONTINUED)
 - [x] Lazygit
+- [ ] zsh
+- [ ] mcphub (watch for internal stuff (maybe private repo)
 
 ### Workflow TODO
 - clean up bashrc
