@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $OS == "Windows" ]]; then
+if [[ $OS == "Darwin" ]]; then
     # MacOS specific rc goes here
     :
 fi

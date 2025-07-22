@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $OS == "Windows" ]]; then
+if [[ $OS == "Linux" ]]; then
     # Source global definitions
     if [ -f /etc/bashrc ]; then
         . /etc/bashrc
