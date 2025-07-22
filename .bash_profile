@@ -20,3 +20,5 @@ fi
 # fi
 
 EDITOR=nvim
+
+. "$HOME/.local/bin/env"
