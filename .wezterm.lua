@@ -17,6 +17,7 @@ config.color_scheme = "Catppuccin Mocha"
 -- Appearance
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_image = assets_folder .. "/kitty_sky_blurred.png"
+config.window_background_image = assets_folder .. "/kitty_sky_blurred_darkened.png"
 
 return config
+
