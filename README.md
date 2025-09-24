@@ -12,18 +12,23 @@ Settings and configs for the tools I use
 - [ ] mcphub (watch for internal stuff (maybe private repo)
 
 ### Workflow TODO
-- clean up bashrc
-- yazi file browser
-- telescope-file-browser
-- zsh with oh-my-zsh!
+- [harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 - XDG-variables
-- dotfile management for windows using PowerShell
+- dotfile management for windows using PowerShell and a stow alternative
 - rework pathlib with -options ( -f force, -o optional, -w warn)
 - rust command line tools: https://gist.github.com/sts10/daadbc2f403bdffad1b6d33aff016c0a
 - https://github.com/nvim-telescope/telescope-file-browser.nvim
-- Steal from Primeagen https://github.com/ThePrimeagen/.dotfiles
-- Git Worktree with nvim https://www.youtube.com/watch?v=2uEqYw-N8uE
-- automatic mirror of dotfiles from main to windows repo
+- Steal from [Primeagen](https://github.com/ThePrimeagen/.dotfiles)
+- Git Worktree with nvim ([Youtube](https://www.youtube.com/watch?v=2uEqYw-N8uE))
+- NixOS [in WSL](https://nix-community.github.io/NixOS-WSL/)
+- NixOS everywhere
+- Take a look at [Kickstart-Nvim](https://github.com/dam9000/kickstart-modular.nvim)!
+- Take a look at [LazyVim](https://www.lazyvim.org/)
+- Layered NeoVim Config (offline, minimal, full)
+- [NixVim](https://github.com/nix-community/nixvim)
+- [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)
+- Gitlab and Nextcloud for hosting and syncing my stuff
+- [Bum](https://gitlab.com/waterkip/bum) for git
 
 I don't care if this doesn't fit here! It's the same topic for me >:3
 
@@ -43,3 +48,4 @@ I don't care if this doesn't fit here! It's the same topic for me >:3
 - fzf
 - ripgrep
 - tldr
+- yazi
