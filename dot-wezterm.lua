@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 local assets_folder = "C:/Users/jwolf/.wezterm/assets"
 
 -- Shell
-config.default_prog = { "wsl.exe" }
+config.default_prog = { "wsl.exe", "--cd", "~" }
 
 -- Font settings
 config.font_size = 12
