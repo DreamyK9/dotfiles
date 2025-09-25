@@ -1,6 +1,6 @@
 return {
-	"echasnovski/mini.nvim",
-	version = false,
+	"nvim-mini/mini.nvim",
+	version = "*",
 	config = function()
 		require("mini.surround").setup()
 	end,
