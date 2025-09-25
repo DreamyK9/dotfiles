@@ -2,14 +2,25 @@
 
 Settings and configs for the tools I use
 
-## Branch Policy
+## Workflow
+
+### Branch Policy
 
 - main: stable, Only well-tested configs and features get here. No more than 1 commit per day
 - unstable: Config changes go here first, new features after minimal testing.
 - dev: Features in development. Cross-feature testing happens here.
 - feature/\*: New features get their own branch until they are ready for dev.
 
-### Configs / Settings included:
+## Commit Prefixes
+
+- feat: A new feature or new functionality has been added
+- fix: A bug has been fixed
+- test: Tests have been added or updated
+- refactor: Code has been restructured without changing its behavior
+- docs: Documentation has been updated
+- chore: Miscellanious changes that do not modify src or test files
+
+## Configs / Settings included:
 
 - [x] NeoVim - ~/.config/nvim
 - [x] Bash - ~
@@ -18,7 +29,7 @@ Settings and configs for the tools I use
 - [ ] zsh
 - [ ] mcphub (watch for internal stuff (maybe private repo)
 
-### Workflow TODO
+## Workflow TODO
 
 - [harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 - XDG-variables
@@ -40,7 +51,7 @@ Settings and configs for the tools I use
 
 I don't care if this doesn't fit here! It's the same topic for me >:3
 
-### Inspiration / Sources
+## Inspiration / Sources
 
 - [@nickjj/dotfiles](https://github.com/nickjj/dotfiles/)
 - NeoVim
@@ -50,7 +61,7 @@ I don't care if this doesn't fit here! It's the same topic for me >:3
   - [Telescope Extensions - YouTube](https://www.youtube.com/watch?v=3RJ05hj23Vg)
   - [nvim-lazy](https://github.com/slydragonn/nvim-lazy)
 
-### Command Line Tools:
+## Command Line Tools:
 
 - fd-find
 - fzf
