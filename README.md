@@ -2,6 +2,13 @@
 
 Settings and configs for the tools I use
 
+## Branch Policy
+
+- main: stable, Only well-tested configs and features get here. No more than 1 commit per day
+- unstable: Config changes go here first, new features after minimal testing.
+- dev: Features in development. Cross-feature testing happens here.
+- feature/\*: New features get their own branch until they are ready for dev.
+
 ### Configs / Settings included:
 
 - [x] NeoVim - ~/.config/nvim
@@ -12,6 +19,7 @@ Settings and configs for the tools I use
 - [ ] mcphub (watch for internal stuff (maybe private repo)
 
 ### Workflow TODO
+
 - [harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 - XDG-variables
 - dotfile management for windows using PowerShell and a stow alternative
