@@ -34,4 +34,5 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-. "$HOME/.local/bin/env"
+pathappend "$HOME/.local/bin/env"
+pathappend "$HOME/.cargo/env"
