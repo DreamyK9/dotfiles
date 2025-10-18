@@ -1,15 +1,21 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local assets_folder = "C:/Users/jwolf/.wezterm/assets"
+local assets_folder = ""
 
 -- Shell
-config.default_prog = { "wsl.exe", "--cd", "~" }
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	assets_folder = os.getenv("USERPROFILE") .. "/.wezterm/assets"
+	config.default_prog = { "wsl.exe", "--cd", "~" }
+else
+	assets_folder = os.getenv("HOME") .. "/.wezterm/assets"
+	config.default_prog = { "/bin/zsh", "-l" }
+end
 
 -- Font settings
 config.font_size = 12
 config.line_height = 1.2
-config.font = wezterm.font({ family = "SauceCodePro NFM", weight = "DemiBold" })
+-- config.font = wezterm.font({ family = "SauceCodePro NFM", weight = "DemiBold" })
 
 -- Colors
 config.color_scheme = "Catppuccin Mocha"
