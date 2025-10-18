@@ -22,6 +22,8 @@ unset lib
 # User specific environment
 pathappend $HOME
 pathappend ~/.local/bin
+pathappend "$HOME/.local/bin/env"
+pathappend "$HOME/.cargo/env"
 export PATH
 
 # Load aliases and functions from .bashrc.d
@@ -34,5 +36,3 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-pathappend "$HOME/.local/bin/env"
-pathappend "$HOME/.cargo/env"
