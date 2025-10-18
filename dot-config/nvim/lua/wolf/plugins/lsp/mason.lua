@@ -25,6 +25,7 @@ return {
 			"eslint_d", -- JavaScript formatter
 			"stylua", -- lua formatter
 			"ruff", -- Blazingly fast, comprehensive python formatter and linter, written in Rust
+			"clangd", -- c/c++ LSP implementation
 		}
 
 		require("mason-lspconfig").setup({})
