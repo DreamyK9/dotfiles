@@ -18,6 +18,9 @@ config.line_height = 1.2
 config.font = wezterm.font_with_fallback({
 	"Monocraft",
 	"DepartureMono Nerd Font",
+	"JetBrains Mono",
+	"Nerd Font Symbols",
+	"Noto Color Emoji",
 })
 
 -- Colors
