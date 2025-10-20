@@ -13,9 +13,12 @@ else
 end
 
 -- Font settings
-config.font_size = 12
+config.font_size = 16
 config.line_height = 1.2
--- config.font = wezterm.font({ family = "SauceCodePro NFM", weight = "DemiBold" })
+config.font = wezterm.font_with_fallback({
+	"Monocraft",
+	"DepartureMono Nerd Font",
+})
 
 -- Colors
 config.color_scheme = "Catppuccin Mocha"
