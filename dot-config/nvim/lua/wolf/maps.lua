@@ -36,10 +36,10 @@ map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
 
 -- Remove Search Highlighting
-map("n", "<C-_>", "<CMD>nohlsearch<CR>")
+map("n", "<C-/>", "<CMD>nohlsearch<CR>")
 
 -- Alternative to escape key
-map({ "n", "i", "v", "x", "o", "t" }, "<leader><tab>", "<ESC>")
+-- map({ "n", "i", "v", "x", "o", "t" }, "<leader><tab>", "<ESC>")
 
 -- Telescope
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
@@ -52,7 +52,6 @@ map("n", "<leader>fe", "<CMD>Noice pick<CR>", { desc = "List message history. e=
 map("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { desc = "Search help docs" })
 map("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Fuzzy find keymaps" })
 map("n", "<leader>fc", "<CMD>Telescope commands<CR>", { desc = "Fuzzy find commands" })
-map("n", "<leader>fb", "<CMD>Telescope commands<CR>", { desc = "Fuzzy find commands" })
 map(
 	"n",
 	"<leader>fb",
