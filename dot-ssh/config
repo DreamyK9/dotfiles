@@ -1,7 +1,15 @@
 Host github
     HostName github.com
 
+Host gitlab_tu
+    HostName git.tu-berlin.de
+
 Host github github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_wolf
+
+Host gitlab_tu git.tu-berlin.de
     User git
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/id_wolf
