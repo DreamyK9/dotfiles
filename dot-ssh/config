@@ -7,22 +7,22 @@ Host gitlab_tu
 Host github github.com
     User git
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_wolf
+    IdentityFile ~/.ssh/id_git
 
 Host gitlab_tu git.tu-berlin.de
     User git
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_wolf
+    IdentityFile ~/.ssh/id_git
 
 #######################################
 
-Host gitlab_global
+Host gitlab_hhi
     HostName gitlab.hhi.fraunhofer.de
 
-Host gitlab_local
+Host gitlab_fe
     HostName gitlab.fe.hhi.de
 
-Host gitlab_global gitlab_local gitlab.hhi.fraunhofer.de gitlab.fe.hhi.de
+Host gitlab_hhi gitlab_fe gitlab.hhi.fraunhofer.de gitlab.fe.hhi.de
     User git
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/id_hhi
